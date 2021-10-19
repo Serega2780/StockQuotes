@@ -29,7 +29,7 @@ public class DefaultSubscriber implements Subscriber<Instrument> {
     public void onNext(Instrument instrument) {
         Instant instant = Instant.now();
         LocalTime time = instant.atZone(ZoneOffset.UTC).toLocalTime();
-        System.out.println(time + ", " + name + " Received in " + Thread.currentThread().getName() + " : " + "ccyPair: " + instrument.getCcyPair() + ", rate: " + instrument.getRate() + ", stamp: " + instrument.getStamp());
+        System.out.println(time + ", " + name + ", " + " Received in " + Thread.currentThread().getName() + ", " + "ccyPair: " + instrument.getCcyPair() + ", rate: " + instrument.getRate() + ", stamp: " + instrument.getStamp());
 
         try {
             Thread.sleep(jobDelay);

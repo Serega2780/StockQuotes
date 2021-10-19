@@ -11,11 +11,11 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Subscriber<Instrument> subscriber1 = new DefaultSubscriber("subscriber1", 500);
-        Subscriber<Instrument> subscriber2 = new DefaultSubscriber("subscriber2", 3000);
-        Subscriber<Instrument> subscriber3 = new DefaultSubscriber("subscriber3", 4000);
-        Subscriber<Instrument> subscriber4 = new DefaultSubscriber("subscriber4", 5000);
-        Subscriber<Instrument> subscriber5 = new DefaultSubscriber("subscriber5", 6000);
+        Subscriber<Instrument> subscriber1 = new DefaultSubscriber("subscriber1", 100);
+        Subscriber<Instrument> subscriber2 = new DefaultSubscriber("subscriber2", 300);
+        Subscriber<Instrument> subscriber3 = new DefaultSubscriber("subscriber3", 500);
+        Subscriber<Instrument> subscriber4 = new DefaultSubscriber("subscriber4", 1000);
+        Subscriber<Instrument> subscriber5 = new DefaultSubscriber("subscriber5", 1500);
 
 
 
