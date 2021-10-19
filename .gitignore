@@ -1,3 +1,27 @@
+# IntelliJ
+*.iml
+/.idea
+
+# Eclipse
+target/
+.project
+.settings
+.classpath
+.factorypath
+.apt_*
+
+# VSCode
+.vscode
+
+# files
+.DS_Store
+*.lock
+*gz
+*local.md
+*.local
+*.public
+*old
+
 # Compiled class file
 *.class
 
