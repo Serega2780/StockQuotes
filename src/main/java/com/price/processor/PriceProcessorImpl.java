@@ -31,6 +31,7 @@ public class PriceProcessorImpl implements PriceProcessor {
     @Override
     public void subscribe(Subscriber<Instrument> subscriber) {
         Flux.merge(mainStreamRefactor(mainStream))
+                .distinct()
                 .publishOn(Schedulers.boundedElastic())
                 .subscribe(subscriber);
 
