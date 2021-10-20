@@ -3,6 +3,7 @@ package com.price.processor;
 import com.price.processor.model.Instrument;
 import org.reactivestreams.Subscriber;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
@@ -15,7 +16,7 @@ public class PriceProcessorImpl implements PriceProcessor {
 
     public PriceProcessorImpl() {
 // "hot" flux
-        this.mainStream = Flux.fromStream(stockStream::getInstrument)
+        this.mainStream = Flux.create((FluxSink<Instrument> fluxSink) -> stockStream.getInstrument().forEach(fluxSink::next))
                 .delayElements(Duration.ofMillis(0))
                 .share()
                 .cache(0);
